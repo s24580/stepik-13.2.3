@@ -1,35 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from "react";
+import PhotoGallery from "./components/PhotoGallery";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [photos, setPhotos] = useState([]);
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(null);
+
+  useEffect(() => {
+    fetch("photos.json")
+      .then((response) => response.json())
+      .then((data) => {
+        setPhotos(data);
+        setCurrentPhotoIndex(Math.floor(Math.random() * data.length));
+      })
+      .catch((error) => console.error("Błąd podczas ładowania zdjęć", error));
+  }, []);
+
+  const nextPhoto = () => {
+    setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % photos.length);
+  };
+
+  const prevPhoto = () => {
+    setCurrentPhotoIndex(
+      (prevIndex) => (prevIndex - 1 + photos.length) % photos.length
+    );
+  };
+
+  const handleRatingChange = (newRating) => {
+    setPhotos((currentPhotos) =>
+      currentPhotos.map((photo, index) =>
+        index === currentPhotoIndex ? { ...photo, rating: newRating } : photo
+      )
+    );
+  };
+
+  if (currentPhotoIndex === null) {
+    return <div>Ładowanie zdjęć...</div>;
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="photo-gallery-container">
+      <PhotoGallery
+        photo={photos[currentPhotoIndex]}
+        onNext={nextPhoto}
+        onPrev={prevPhoto}
+        onRatingChange={handleRatingChange}
+        canGoNext={currentPhotoIndex < photos.length - 1}
+        canGoPrev={currentPhotoIndex > 0}
+      />
+    </div>
+  );
 }
 
-export default App
+export default App;

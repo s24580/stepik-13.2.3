@@ -1,42 +1,68 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.photo-gallery {
   text-align: center;
+  margin: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.photo-gallery img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.star-rating {
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.star-rating .star {
+  padding: 2px;
 }
 
-.card {
-  padding: 2em;
+.star-rating .star.filled {
+  color: rgb(223, 160, 33);
 }
 
-.read-the-docs {
-  color: #888;
+.photo-gallery .nav-button {
+  background-color: #ff0000;
+  border: 1px solid #ff0000;
+  padding: 5px 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.photo-gallery .nav-button:hover {
+  background-color: #0e0a0a;
+}
+.photo-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(35, 31, 31);
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.photo-popup p {
+  margin: 10px 0;
+}
+
+.details-link {
+  background-color: #302e2e;
+  border: 1px solid #312b2b;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 10px;
+}
+
+.details-link:hover {
+  background-color: #372f2f;
+}
+
+img {
+  width: 20rem;
 }

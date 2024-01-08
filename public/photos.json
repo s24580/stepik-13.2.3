@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "url": "https://a.assecobs.com/_img/amigohurt/b25d6de6-8f8f-439d-8bd2-c9d7318d85e7/piwo-puszka-kuflowe-mocne-0-5l-24-.jpg",
+    "rating": 8,
+    "author": "Autor 1",
+    "dateAdded": "2022-01-01",
+    "details": "Szczegóły zdjęcia 1"
+  },
+  {
+    "id": 2,
+    "url": "https://www.delikatesyemis.pl/content/images/thumbs/0012235_zubr-piwo-jasne-500-ml_550.jpeg",
+    "rating": 6,
+    "author": "Autor 2",
+    "dateAdded": "2022-01-01",
+    "details": "Szczegóły zdjęcia 2"
+  },
+  {
+    "id": 3,
+    "url": "https://leclerc.com.pl/public/upload/sellasist_cache/thumb_page_58acf41d986aa922e801cd66a0f32336.jpg",
+    "rating": 9,
+    "author": "Autor 3",
+    "dateAdded": "2022-01-01",
+    "details": "Szczegóły zdjęcia 3"
+  },
+  {
+    "id": 4,
+    "url": "https://kulturasmaku.pl/zdjecia/produkt/23413/6146/0x992/3m/Piwo_Guinness_0_5l_KulturaSmaku.jpg",
+    "rating": 11,
+    "author": "Autor 4",
+    "dateAdded": "2022-01-01",
+    "details": "Szczegóły zdjęcia 4"
+  },
+  {
+    "id": 5,
+    "url": "https://assets.untappd.com/photos/2023_01_20/b5036d7932fce3fe0239a618ad58d89b_640x640.jpg",
+    "rating": 10,
+    "author": "Autor 5",
+    "dateAdded": "2022-01-01",
+    "details": "Szczegóły zdjęcia 5"
+  }
+]
